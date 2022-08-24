@@ -7,6 +7,7 @@ from flask import send_file
 # from pymongo import MongoClient
 
 from Sentiment import Sentiment
+import nltk
 
 # import datetime
 
@@ -21,6 +22,13 @@ app = Flask(__name__)
 
 # collection.insert_one({"reqImage": "new"})
 
+
+
+nltk.download('vader_lexicon')
+
+@app.route('/home')
+def home_screen():
+    return "welcome"
 
 @app.route('/1406/<string:essayInput>')
 def sentimentAnalysisOfEssayInput(essayInput):
