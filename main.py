@@ -32,8 +32,8 @@ def home_screen():
     return "welcome"
 
 @app.route('/1406/')
-def sentimentAnalysisOfEssayInput(n):
-    essayInput = str(n)
+def sentimentAnalysisOfEssayInput():
+    essayInput = str("h")
     RegexOutput = Sentiment.contentRegex(essayInput)
     tokenization = Sentiment.tokenizationAndLemma(RegexOutput)
     emotionList = Sentiment.emotionsListMaker(tokenization)
