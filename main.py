@@ -43,24 +43,23 @@ def sentimentAnalysisOfEssayInput(n):
     counterResult = Sentiment.CountingEmotions(emotionList)
     PositiveNeutralOrNegative = Sentiment.sentiment_analyse(RegexOutput)
 
-    return "hi"
     # fileName = Sentiment.plottingGraph(counterResult)
 
-    # result = {"initialEssay": essayInput,
+    result = {"initialEssay": essayInput,
 
-    #           "finalAfterRegex": (str(RegexOutput)),
+              "finalAfterRegex": (str(RegexOutput)),
 
-    #           "emotionsPresent": emotionList,
+              "emotionsPresent": emotionList,
 
-    #           "tokenizationOutput": tokenization,
+              "tokenizationOutput": tokenization,
 
-    #           "counterResult": counterResult,
+              "counterResult": counterResult,
 
-    #           "NatureOfSentiment": PositiveNeutralOrNegative,
+              "NatureOfSentiment": PositiveNeutralOrNegative,
 
-    #           }
+              }
 
-    # return jsonify(result)
+    return jsonify(result)
     # return send_file(fileName, mimetype='Image/png')
 
 
