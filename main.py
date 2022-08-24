@@ -30,9 +30,9 @@ nltk.download('vader_lexicon')
 def home_screen():
     return "welcome"
 
-@app.route('/1406/<string:essayInput>')
-def sentimentAnalysisOfEssayInput(essayInput):
-
+@app.route('/1406/<string:n>')
+def sentimentAnalysisOfEssayInput(n):
+    essayInput = str(n)
     RegexOutput = Sentiment.contentRegex(essayInput)
     tokenization = Sentiment.tokenizationAndLemma(RegexOutput)
     emotionList = Sentiment.emotionsListMaker(tokenization)
