@@ -1,9 +1,9 @@
-from email.mime import image
-import imp
+# from email.mime import image
+# import imp
 import re
 from collections import Counter
-import string
-from tkinter import Image
+# import string
+# from tkinter import Image
 import matplotlib.pyplot as plt
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -11,7 +11,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
 import datetime
-from PIL import Image
+# from PIL import Image
 
 
 class Sentiment:

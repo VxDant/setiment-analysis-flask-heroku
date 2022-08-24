@@ -1,14 +1,14 @@
-from fileinput import filename
-from http import client
-from re import X
-from unittest import result
+# from fileinput import filename
+# from http import client
+# from re import X
+# from unittest import result
 from flask import Flask, jsonify
 from flask import send_file
-from pymongo import MongoClient
+# from pymongo import MongoClient
 
 from Sentiment import Sentiment
 
-import datetime
+# import datetime
 
 #mongodb+srv://vedant:vedantserver@cluster0.mvtfwnx.mongodb.net/?retryWrites=true&w=majority
 
@@ -46,7 +46,7 @@ def sentimentAnalysisOfEssayInput(essayInput):
 
               }
 
-    return result
+    return jsonify(result)
     # return send_file(fileName, mimetype='Image/png')
 
 
