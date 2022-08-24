@@ -25,6 +25,7 @@ app = Flask(__name__)
 
 
 nltk.download('vader_lexicon')
+nltk.download('punkt')
 
 @app.route('/home')
 def home_screen():
