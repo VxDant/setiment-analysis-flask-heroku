@@ -26,14 +26,15 @@ app = Flask(__name__)
 
 nltk.download('vader_lexicon')
 nltk.download('punkt')
+nltk.download('stopwords')
 
 @app.route('/home')
 def home_screen():
     return "welcome"
 
-@app.route('/1406/')
-def sentimentAnalysisOfEssayInput():
-    essayInput = str("h")
+@app.route('/1406/<string:n>')
+def sentimentAnalysisOfEssayInput(n):
+    essayInput = str(n)
     RegexOutput = Sentiment.contentRegex(essayInput)
     tokenization = Sentiment.tokenizationAndLemma(RegexOutput)
     emotionList = Sentiment.emotionsListMaker(tokenization)
