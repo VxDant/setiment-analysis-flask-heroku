@@ -31,7 +31,7 @@ nltk.download('punkt')
 def home_screen():
     return "welcome"
 
-@app.route('/1406/<string:n>')
+@app.route('/1406/')
 def sentimentAnalysisOfEssayInput(n):
     essayInput = str(n)
     RegexOutput = Sentiment.contentRegex(essayInput)
