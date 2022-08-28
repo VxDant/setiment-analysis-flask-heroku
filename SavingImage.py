@@ -1,0 +1,4 @@
+class ImageDictionary:
+
+    dict1 = {}
+    

@@ -4,10 +4,13 @@
 # from unittest import result
 from flask import Flask, jsonify
 from flask import send_file
+from SavingImage import ImageDictionary
 # from pymongo import MongoClient
 
 from Sentiment import Sentiment
 import nltk
+from flask import Response
+import io
 
 # import datetime
 
@@ -43,7 +46,7 @@ def sentimentAnalysisOfEssayInput(n):
     counterResult = Sentiment.CountingEmotions(emotionList)
     PositiveNeutralOrNegative = Sentiment.sentiment_analyse(RegexOutput)
 
-    # fileName = Sentiment.plottingGraph(counterResult)
+    fileName = Sentiment.plottingGraph(counterResult)
 
     result = {"initialEssay": essayInput,
 
@@ -63,12 +66,15 @@ def sentimentAnalysisOfEssayInput(n):
     # return send_file(fileName, mimetype='Image/png')
 
 
-@app.route('/image')
-def SentimentAnalysisG():
+@app.route('/1406/image')
+def SentimentAnalysisImage():
+
+    x = ImageDictionary.dict1['1']
+
     # with open(f'graph.png') as  file1:
     #     file1.name
-    
-    return send_file('graph.png', mimetype='image/png')
+    return Response(x,mimetype='image/png')
+    # return send_file('graph.png', mimetype='image/png')
 
 
 if __name__ == "__main__":

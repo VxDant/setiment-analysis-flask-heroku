@@ -1,5 +1,6 @@
 # from email.mime import image
 # import imp
+import io
 import re
 from collections import Counter
 # import string
@@ -11,6 +12,8 @@ from nltk.stem import WordNetLemmatizer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
 import datetime
+
+from SavingImage import ImageDictionary
 # from PIL import Image
 
 
@@ -67,10 +70,16 @@ class Sentiment:
         return Counter(emotionList)
 
     def plottingGraph(counter):
-        ct = str(datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
+        # ct = str(datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
         fig, ax1 = plt.subplots()
         fig.autofmt_xdate()
         ax1.bar(counter.keys(), counter.values())
+        f = io.BytesIO()
+        plt.savefig(f)
+        contentFile = f.getvalue()
+        ImageDictionary.dict1['1'] = contentFile
+        # return contentFile
+        # return f
         # plt.savefig(f'graph.png')
         # f = plt.figure(fig,plt,format='png')
         # plt.close()
