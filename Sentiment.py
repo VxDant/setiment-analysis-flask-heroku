@@ -78,7 +78,8 @@ class Sentiment:
         plt.savefig(f)
         contentFile = f.getvalue()
         ImageDictionary.dict1['1'] = contentFile
-        # return contentFile
+        # print(ImageDictionary.dict1.items())
+        return contentFile
         # return f
         # plt.savefig(f'graph.png')
         # f = plt.figure(fig,plt,format='png')
