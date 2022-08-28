@@ -47,6 +47,8 @@ def sentimentAnalysisOfEssayInput(n):
     PositiveNeutralOrNegative = Sentiment.sentiment_analyse(RegexOutput)
 
     fileName = Sentiment.plottingGraph(counterResult)
+    ImageDictionary.dict1.clear()
+    ImageDictionary.dict1['1'] = fileName
 
     result = {"initialEssay": essayInput,
 
@@ -66,7 +68,7 @@ def sentimentAnalysisOfEssayInput(n):
     # return send_file(fileName, mimetype='Image/png')
 
 
-@app.route('/1406/image')
+@app.route('/2906/image')
 def SentimentAnalysisImage():
 
     x = ImageDictionary.dict1['1']

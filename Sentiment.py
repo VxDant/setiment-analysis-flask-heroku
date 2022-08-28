@@ -77,7 +77,9 @@ class Sentiment:
         f = io.BytesIO()
         plt.savefig(f)
         contentFile = f.getvalue()
-        ImageDictionary.dict1['1'] = contentFile
+        # commenting the dictionary insertion of bytes here and adding bytes data in dictionary at main file
+        # adding bytes data in dictionary at --> main file in the fuction which gives response in --> json result
+        # ImageDictionary.dict1['1'] = contentFile
         # print(ImageDictionary.dict1.items())
         return contentFile
         # return f
