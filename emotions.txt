@@ -43,6 +43,7 @@
  'boiling': 'angry',
  'bold': 'fearless',
  'bored': 'bored',
+ 'boring': 'bored',
  'brave': 'fearless',
  'bright': 'happy',
  'brisk': 'happy',
